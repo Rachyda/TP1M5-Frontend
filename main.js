@@ -47,6 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 cameraElement.style.color = 'red';
             }
+
+            // 7. MISE À JOUR DU PARE-FEU (FW-01)
+            // On "attrape" la cible HTML
+            // Note : 'statut-pare-feu' doit correspondre à l'id du HTML
+            const pareFeuElement = document.getElementById('statut-pare-feu');
+           
+            // On met à jour son contenu
+            // Note : data.fw01 correspond à la clé dans data.json
+            pareFeuElement.textContent = data.fw01;
+            // Change la couleur en fonction du statut
+            if (data.fw01 === 'En Ligne') {
+                pareFeuElement.style.color = 'green';
+            } else {
+                pareFeuElement.style.color = 'red';
+            }
         });
 
 
